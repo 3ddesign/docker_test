@@ -1,9 +1,13 @@
 #Specify a base image:
-FROM alpine
+FROM node:alpine
 
-#install dep
+WORKDIR /usr/app
+
+#install deps
+COPY ./ ./
 RUN npm install
 
 #Default command
-
 CMD ["npm", "start"]
+
+# docker run -p 8080:8080 test/simpleweb
