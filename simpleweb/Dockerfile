@@ -4,8 +4,9 @@ FROM node:alpine
 WORKDIR /usr/app
 
 #install deps
-COPY ./ ./
+COPY ./package.json ./
 RUN npm install
+COPY ./ ./
 
 #Default command
 CMD ["npm", "start"]
