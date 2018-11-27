@@ -205,7 +205,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Supported Browsers
 
-By default, the generated project supports all modern browsers.<br>
+By default.conf, the generated project supports all modern browsers.<br>
 Support for Internet Explorer 9, 10, and 11 requires [polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-app-polyfill/README.md).
 
 ### Supported Language Features
@@ -224,7 +224,7 @@ Learn more about [different proposal stages](https://babeljs.io/docs/plugins/#pr
 
 While we recommend using experimental proposals with some caution, Facebook heavily uses these features in the product code, so we intend to provide [codemods](https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb) if any of these proposals change in the future.
 
-Note that **this project includes no [polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-app-polyfill/README.md)** by default.
+Note that **this project includes no [polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-app-polyfill/README.md)** by default.conf.
 
 If you use any other ES6+ features that need **runtime support** (such as `Array.from()` or `Symbol`), make sure you are [including the appropriate polyfills manually](https://github.com/facebook/create-react-app/blob/master/packages/react-app-polyfill/README.md), or that the browsers you are targeting already support them.
 
@@ -398,7 +398,7 @@ class Button extends Component {
   }
 }
 
-export default Button; // Don’t forget to use export default!
+export default.conf Button; // Don’t forget to use export default.conf!
 ```
 
 ### `DangerButton.js`
@@ -413,14 +413,14 @@ class DangerButton extends Component {
   }
 }
 
-export default DangerButton;
+export default.conf DangerButton;
 ```
 
-Be aware of the [difference between default and named exports](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281). It is a common source of mistakes.
+Be aware of the [difference between default.conf and named exports](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281). It is a common source of mistakes.
 
-We suggest that you stick to using default imports and exports when a module only exports a single thing (for example, a component). That’s what you get when you use `export default Button` and `import Button from './Button'`.
+We suggest that you stick to using default.conf imports and exports when a module only exports a single thing (for example, a component). That’s what you get when you use `export default.conf Button` and `import Button from './Button'`.
 
-Named exports are useful for utility modules that export several functions. A module may have at most one default export and as many named exports as you like.
+Named exports are useful for utility modules that export several functions. A module may have at most one default.conf export and as many named exports as you like.
 
 Learn more about ES6 modules:
 
@@ -469,7 +469,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default.conf App;
 ```
 
 This will make `moduleA.js` and all its unique dependencies as a separate chunk that only loads after the user clicks the 'Load' button.
@@ -643,7 +643,7 @@ becomes this:
 
 If you need to disable autoprefixing for some reason, [follow this section](https://github.com/postcss/autoprefixer#disabling).
 
-[CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) prefixing is disabled by default, but it will **not** strip manual prefixing.
+[CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) prefixing is disabled by default.conf, but it will **not** strip manual prefixing.
 If you'd like to opt-in to CSS Grid prefixing, [first familiarize yourself about its limitations](https://github.com/postcss/autoprefixer#does-autoprefixer-polyfill-grid-layout-for-ie).<br>
 To enable CSS Grid prefixing, add `/* autoprefixer grid: on */` to the top of your CSS file.
 
@@ -668,7 +668,7 @@ function Header() {
   return <img src={logo} alt="Logo" />;
 }
 
-export default Header;
+export default.conf Header;
 ```
 
 This ensures that when the project is built, Webpack will correctly move the images into the build folder, and provide us with correct paths.
@@ -805,7 +805,7 @@ Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your
 ```js
 import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+// components takes precedence over default.conf styles.
 ```
 
 Import required reactstrap components within `src/App.js` file or your custom component files:
@@ -826,16 +826,16 @@ As of `react-scripts@2.0.0` you can import `.scss` files. This makes it possible
 To customize Bootstrap, create a file called `src/custom.scss` (or similar) and import the Bootstrap source stylesheet. Add any overrides _before_ the imported file(s). You can reference [Bootstrap's documentation](http://getbootstrap.com/docs/4.1/getting-started/theming/#css-variables) for the names of the available variables.
 
 ```scss
-// Override default variables before the import
+// Override default.conf variables before the import
 $body-bg: #000;
 
-// Import Bootstrap and its default variables
+// Import Bootstrap and its default.conf variables
 @import '~bootstrap/scss/bootstrap.scss';
 ```
 
 > **Note:** You must prefix imports from `node_modules` with `~` as displayed above.
 
-Finally, import the newly created `.scss` file instead of the default Bootstrap `.css` in the beginning of your `src/index.js` file, for example:
+Finally, import the newly created `.scss` file instead of the default.conf Bootstrap `.css` in the beginning of your `src/index.js` file, for example:
 
 ```javascript
 import './custom.scss';
@@ -919,7 +919,7 @@ Note that [you may need to configure your production server to support client-si
 > Note: this feature is available with `react-scripts@0.2.3` and higher.
 
 Your project can consume variables declared in your environment as if they were declared locally in your JS files. By
-default you will have `NODE_ENV` defined for you, and any other environment variables starting with
+default.conf you will have `NODE_ENV` defined for you, and any other environment variables starting with
 `REACT_APP_`.
 
 **The environment variables are embedded during the build time**. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, just like [described here](#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
@@ -1338,7 +1338,7 @@ The watcher includes an interactive command-line interface with the ability to r
 
 ### Version Control Integration
 
-By default, when you run `npm test`, Jest will only run the tests related to files changed since the last commit. This is an optimization designed to make your tests run fast regardless of how many tests you have. However it assumes that you don’t often commit the code that doesn’t pass the tests.
+By default.conf, when you run `npm test`, Jest will only run the tests related to files changed since the last commit. This is an optimization designed to make your tests run fast regardless of how many tests you have. However it assumes that you don’t often commit the code that doesn’t pass the tests.
 
 Jest will always explicitly mention that it only ran tests related to the files changed since the last commit. You can also press `a` in the watch mode to force Jest to run all tests.
 
@@ -1567,7 +1567,7 @@ Note that tests run much slower with coverage so it is recommended to run it sep
 
 #### Configuration
 
-The default Jest coverage configuration can be overridden by adding any of the following supported keys to a Jest config in your package.json.
+The default.conf Jest coverage configuration can be overridden by adding any of the following supported keys to a Jest config in your package.json.
 
 Supported overrides:
 
@@ -1603,11 +1603,11 @@ Example package.json:
 
 ### Continuous Integration
 
-By default `npm test` runs the watcher with interactive CLI. However, you can force it to run tests once and finish the process by setting an environment variable called `CI`.
+By default.conf `npm test` runs the watcher with interactive CLI. However, you can force it to run tests once and finish the process by setting an environment variable called `CI`.
 
-When creating a build of your application with `npm run build` linter warnings are not checked by default. Like `npm test`, you can force the build to perform a linter warning check by setting the environment variable `CI`. If any warnings are encountered then the build fails.
+When creating a build of your application with `npm run build` linter warnings are not checked by default.conf. Like `npm test`, you can force the build to perform a linter warning check by setting the environment variable `CI`. If any warnings are encountered then the build fails.
 
-Popular CI servers already set the environment variable `CI` by default but you can do this yourself too:
+Popular CI servers already set the environment variable `CI` by default.conf but you can do this yourself too:
 
 ### On CI servers
 
@@ -1785,7 +1785,7 @@ For an example, a simple button component could have following states:
 
 Usually, it’s hard to see these states without running a sample app or some examples.
 
-Create React App doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
+Create React App doesn’t include any tools for this by default.conf, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
 
 ![Storybook for React Demo](http://i.imgur.com/7CIAWpB.gif)
 
@@ -1862,7 +1862,7 @@ Create React App doesn't provide any built-in functionality to publish a compone
 
 The production build has all the tools necessary to generate a first-class
 [Progressive Web App](https://developers.google.com/web/progressive-web-apps/),
-but **the offline/cache-first behavior is opt-in only**. By default,
+but **the offline/cache-first behavior is opt-in only**. By default.conf,
 the build process will generate a service worker file, but it will not be
 registered, so it will not take control of your production web app.
 
@@ -1907,7 +1907,7 @@ following into account:
 1. After the initial caching is done, the [service worker lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle)
 controls when updated content ends up being shown to users. In order to guard against
 [race conditions with lazy-loaded content](https://github.com/facebook/create-react-app/issues/3613#issuecomment-353467430),
-the default behavior is to conservatively keep the updated service worker in the "[waiting](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting)"
+the default.conf behavior is to conservatively keep the updated service worker in the "[waiting](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting)"
 state. This means that users will end up seeing older content until they close (reloading is not
 enough) their existing, open tabs. See [this blog post](https://jeffy.info/2018/10/10/sw-in-c-r-a.html)
 for more details about this behavior.
@@ -1921,7 +1921,7 @@ for more details about this behavior.
    this messages is currently left as an exercise to the developer, but as a
    starting point, you can make use of the logic included in [`src/serviceWorker.js`](src/serviceWorker.js), which
    demonstrates which service worker lifecycle events to listen for to detect each
-   scenario, and which as a default, just logs appropriate messages to the
+   scenario, and which as a default.conf, just logs appropriate messages to the
    JavaScript console.
 
 1. Service workers [require HTTPS](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers#you_need_https),
@@ -1943,13 +1943,13 @@ for more details about this behavior.
    instructions for using other methods. _Be sure to always use an
    incognito window to avoid complications with your browser cache._
 
-1. By default, the generated service worker file will not intercept or cache any
+1. By default.conf, the generated service worker file will not intercept or cache any
    cross-origin traffic, like HTTP [API requests](#integrating-with-an-api-backend),
    images, or embeds loaded from a different domain.
 
 ### Progressive Web App Metadata
 
-The default configuration includes a web app manifest located at
+The default.conf configuration includes a web app manifest located at
 [`public/manifest.json`](public/manifest.json), that you can customize with
 details specific to your web application.
 
@@ -2087,7 +2087,7 @@ service worker navigation routing can be configured or disabled by
 and [`navigateFallbackWhitelist`](https://github.com/GoogleChrome/sw-precache#navigatefallbackwhitelist-arrayregexp)
 options of the `SWPreachePlugin` [configuration](../config/webpack.config.prod.js).
 
-When users install your app to the homescreen of their device the default configuration will make a shortcut to `/index.html`. This may not work for client-side routers which expect the app to be served from `/`. Edit the web app manifest at [`public/manifest.json`](public/manifest.json) and change `start_url` to match the required URL scheme, for example:
+When users install your app to the homescreen of their device the default.conf configuration will make a shortcut to `/index.html`. This may not work for client-side routers which expect the app to be served from `/`. Edit the web app manifest at [`public/manifest.json`](public/manifest.json) and change `start_url` to match the required URL scheme, for example:
 
 ```js
   "start_url": ".",
@@ -2095,7 +2095,7 @@ When users install your app to the homescreen of their device the default config
 
 ### Building for Relative Paths
 
-By default, Create React App produces a build assuming your app is hosted at the server root.<br>
+By default.conf, Create React App produces a build assuming your app is hosted at the server root.<br>
 To override this, specify the `homepage` in your `package.json`, for example:
 
 ```js
@@ -2171,9 +2171,9 @@ Then run the `firebase init` command from your project’s root. You need to cho
 
     First, let's associate this project directory with a Firebase project.
     You can create multiple project aliases by running firebase use --add,
-    but for now we'll just set up a default project.
+    but for now we'll just set up a default.conf project.
 
-    ? What Firebase project do you want to associate as default? Example app (example-app-fd690)
+    ? What Firebase project do you want to associate as default.conf? Example app (example-app-fd690)
 
     === Database Setup
 
@@ -2461,17 +2461,17 @@ You can adjust various development and production settings by setting environmen
 
 | Variable             |      Development       |     Production     | Usage                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | :------------------: | :--------------------: | :----------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BROWSER              |   :white_check_mark:   |        :x:         | By default, Create React App will open the default system browser, favoring Chrome on macOS. Specify a [browser](https://github.com/sindresorhus/opn#app) to override this behavior, or set it to `none` to disable it completely. If you need to customize the way the browser is launched, you can specify a node script instead. Any arguments passed to `npm start` will also be passed to this script, and the url where your app is served will be the last argument. Your script's file name must have the `.js` extension.                                                                                                                                       |
-| HOST                 |   :white_check_mark:   |        :x:         | By default, the development web server binds to `localhost`. You may use this variable to specify a different host.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| PORT                 |   :white_check_mark:   |        :x:         | By default, the development web server will attempt to listen on port 3000 or prompt you to attempt the next available port. You may use this variable to specify a different port.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| BROWSER              |   :white_check_mark:   |        :x:         | By default.conf, Create React App will open the default.conf system browser, favoring Chrome on macOS. Specify a [browser](https://github.com/sindresorhus/opn#app) to override this behavior, or set it to `none` to disable it completely. If you need to customize the way the browser is launched, you can specify a node script instead. Any arguments passed to `npm start` will also be passed to this script, and the url where your app is served will be the last argument. Your script's file name must have the `.js` extension.                                                                                                                                       |
+| HOST                 |   :white_check_mark:   |        :x:         | By default.conf, the development web server binds to `localhost`. You may use this variable to specify a different host.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| PORT                 |   :white_check_mark:   |        :x:         | By default.conf, the development web server will attempt to listen on port 3000 or prompt you to attempt the next available port. You may use this variable to specify a different port.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | HTTPS                |   :white_check_mark:   |        :x:         | When set to `true`, Create React App will run the development server in `https` mode.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | PUBLIC_URL           |          :x:           | :white_check_mark: | Create React App assumes your application is hosted at the serving web server's root or a subpath as specified in [`package.json` (`homepage`)](#building-for-relative-paths). Normally, Create React App ignores the hostname. You may use this variable to force assets to be referenced verbatim to the url you provide (hostname included). This may be particularly useful when using a CDN to host your application.                                                                                                                                                                                                                                               |
-| CI                   | :large_orange_diamond: | :white_check_mark: | When set to `true`, Create React App treats warnings as failures in the build. It also makes the test runner non-watching. Most CIs set this flag by default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CI                   | :large_orange_diamond: | :white_check_mark: | When set to `true`, Create React App treats warnings as failures in the build. It also makes the test runner non-watching. Most CIs set this flag by default.conf.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | REACT_EDITOR         |   :white_check_mark:   |        :x:         | When an app crashes in development, you will see an error overlay with clickable stack trace. When you click on it, Create React App will try to determine the editor you are using based on currently running processes, and open the relevant source file. You can [send a pull request to detect your editor of choice](https://github.com/facebook/create-react-app/issues/2636). Setting this environment variable overrides the automatic detection. If you do it, make sure your systems [PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>) environment variable points to your editor’s bin folder. You can also set it to `none` to disable it completely. |
 | CHOKIDAR_USEPOLLING  |   :white_check_mark:   |        :x:         | When set to `true`, the watcher runs in polling mode, as necessary inside a VM. Use this option if `npm start` isn't detecting changes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | GENERATE_SOURCEMAP   |          :x:           | :white_check_mark: | When set to `false`, source maps are not generated for a production build. This solves OOM issues on some smaller machines.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | NODE_PATH            |   :white_check_mark:   | :white_check_mark: | Same as [`NODE_PATH` in Node.js](https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders), but only relative folders are allowed. Can be handy for emulating a monorepo setup by setting `NODE_PATH=src`.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| INLINE_RUNTIME_CHUNK |          :x:           | :white_check_mark: | By default, Create React App will embed the runtime script into `index.html` during the production build. When set to `false`, the script will not be embedded and will be imported as usual. This is normally required when dealing with CSP.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| INLINE_RUNTIME_CHUNK |          :x:           | :white_check_mark: | By default.conf, Create React App will embed the runtime script into `index.html` during the production build. When set to `false`, the script will not be embedded and will be imported as usual. This is normally required when dealing with CSP.                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ## Troubleshooting
 
@@ -2528,7 +2528,7 @@ Please refer to [this section](#resolving-heroku-deployment-errors).
 
 ### Moment.js locales are missing
 
-If you use a [Moment.js](https://momentjs.com/), you might notice that only the English locale is available by default. This is because the locale files are large, and you probably only need a subset of [all the locales provided by Moment.js](https://momentjs.com/#multiple-locale-support).
+If you use a [Moment.js](https://momentjs.com/), you might notice that only the English locale is available by default.conf. This is because the locale files are large, and you probably only need a subset of [all the locales provided by Moment.js](https://momentjs.com/#multiple-locale-support).
 
 To add a specific Moment.js locale to your bundle, you need to import it explicitly.<br>
 For example:
